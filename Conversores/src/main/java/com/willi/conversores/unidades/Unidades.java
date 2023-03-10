@@ -16,7 +16,7 @@ public class Unidades extends javax.swing.JFrame {
     public Unidades() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+
         dato1.addItem("Bit");
         dato1.addItem("Byte");
         dato1.addItem("Kilobyte");
@@ -31,11 +31,10 @@ public class Unidades extends javax.swing.JFrame {
         dato2.addItem("Gigabyte");
         dato2.addItem("Terabyte");
     }
-    
-    public String strHtml(Double valor1, String datos1, String resultado, String simbolo, String datos2){
+
+    public String strHtml(Double valor1, String datos1, String resultado, String simbolo, String datos2) {
         return "<html>" + valor1 + " " + datos1 + "<p>" + "Equivalen a: " + "<p>" + resultado + simbolo + " " + datos2 + "</html>";
     }
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -180,8 +179,8 @@ public class Unidades extends javax.swing.JFrame {
     }//GEN-LAST:event_BtAtrasActionPerformed
 
     private void BtBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtBorrarActionPerformed
-        valores1.setText(" ");
-        txtSalida.setText(" ");
+        valores1.setText("");
+        txtSalida.setText("");
         valores1.requestFocus();
         // TODO add your handling code here:
     }//GEN-LAST:event_BtBorrarActionPerformed
@@ -197,30 +196,30 @@ public class Unidades extends javax.swing.JFrame {
         if (input.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debe escribir un valor");
             valores1.requestFocus();
-            valores1.setText(" ");
+            valores1.setText("");
+            txtSalida.setText("");
         } else {
             try {
                 valor1 = Double.parseDouble(input);
+                conversor.setvalor1(valor1);
+                //conversor.setvalor1(valor2);
+                conversor.setDatos1(datos1);
+                conversor.setDatos2(datos2);
+
+                //DecimalFormat formato = new DecimalFormat("#.##");
+                resultado = String.valueOf(conversor.unidad1());
+                simbolo = conversor.enviaSimbolo();
+
+                txtSalida.setText(strHtml(valor1, datos1, resultado, simbolo, datos2));
                 // hacer algo con el valor numérico
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "El valor ingresado no es un número válido");
                 valores1.requestFocus();
-                valores1.setText(" ");
-                txtSalida.setText(" ");
+                valores1.setText("");
+                txtSalida.setText("");
             }
         }
         //valor2 = Double.parseDouble(valores2.getText());  
-
-        conversor.setvalor1(valor1);
-        //conversor.setvalor1(valor2);
-        conversor.setDatos1(datos1);
-        conversor.setDatos2(datos2);
-
-        //DecimalFormat formato = new DecimalFormat("#.##");
-        resultado = String.valueOf(conversor.unidad1());
-        simbolo = conversor.enviaSimbolo();
-
-        txtSalida.setText(strHtml(valor1, datos1, resultado, simbolo, datos2));
 
         // TODO add your handling code here:
     }//GEN-LAST:event_BtConvertirActionPerformed

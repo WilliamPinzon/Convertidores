@@ -14,7 +14,7 @@ public class Monedas extends javax.swing.JFrame {
 
     public Monedas() {
         initComponents();
-        
+
         this.setLocationRelativeTo(null);
         eleccionMoneda.addItem("Dolar");
         eleccionMoneda.addItem("Euro");
@@ -22,9 +22,9 @@ public class Monedas extends javax.swing.JFrame {
         eleccionMoneda.addItem("Yen Japones");
         eleccionMoneda.addItem("Won Sur-Coreano");
     }
-    
-    public String strHtml(Double valor, String simbolo, String resultado, String moneda){
-        return "<html>" + "$ " + valor + " Colombianos" + "<p>" + "Equivalen a: " + "<p>" + simbolo + resultado + " "+ moneda + "</html>";
+
+    public String strHtml(Double valor, String simbolo, String resultado, String moneda) {
+        return "<html>" + "$ " + valor + " Colombianos" + "<p>" + "Equivalen a: " + "<p>" + simbolo + resultado + " " + moneda + "</html>";
     }
 
     @SuppressWarnings("unchecked")
@@ -172,9 +172,19 @@ public class Monedas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Debe escribir un valor");
             ingresoValor.requestFocus();
             ingresoValor.setText(" ");
+            txtSalida.setText(" ");
         } else {
             try {
                 valor = Double.parseDouble(input);
+                conversor.setValor(valor);
+                conversor.setMoneda(moneda);
+
+                DecimalFormat formato = new DecimalFormat("#.##");
+
+                resultado = String.valueOf(formato.format(conversor.conversion()));
+                simbolo = conversor.enviaSimbolo();
+
+                txtSalida.setText(strHtml(valor, simbolo, resultado, moneda));
                 // hacer algo con el valor numérico
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "El valor ingresado no es un número válido");
@@ -183,17 +193,6 @@ public class Monedas extends javax.swing.JFrame {
                 txtSalida.setText(" ");
             }
         }
-
-        conversor.setValor(valor);
-        conversor.setMoneda(moneda);
-        
-
-        DecimalFormat formato = new DecimalFormat("#.##");
-
-        resultado = String.valueOf(formato.format(conversor.conversion()));
-        simbolo = conversor.enviaSimbolo();
-
-        txtSalida.setText(strHtml(valor,simbolo,resultado,moneda));
 
         // TODO add your handling code here:
     }//GEN-LAST:event_BtConvertirActionPerformed
