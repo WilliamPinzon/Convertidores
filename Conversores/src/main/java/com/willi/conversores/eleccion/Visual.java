@@ -6,6 +6,7 @@ package com.willi.conversores.eleccion;
 
 import com.willi.conversores.monedas.Monedas;
 import com.willi.conversores.unidades.Unidades;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -149,6 +150,8 @@ public class Visual extends javax.swing.JFrame {
         Visual abrir = new Visual();
         abrir.setVisible(false);
         this.setVisible(false);
+        
+        JOptionPane.showMessageDialog(null, "Programa Terminado");
         
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
