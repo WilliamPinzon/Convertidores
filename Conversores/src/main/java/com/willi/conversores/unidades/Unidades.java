@@ -206,6 +206,7 @@ public class Unidades extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "El valor ingresado no es un número válido");
                 valores1.requestFocus();
                 valores1.setText(" ");
+                txtSalida.setText(" ");
             }
         }
         //valor2 = Double.parseDouble(valores2.getText());  

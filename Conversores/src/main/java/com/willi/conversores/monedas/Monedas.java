@@ -180,6 +180,7 @@ public class Monedas extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "El valor ingresado no es un número válido");
                 ingresoValor.requestFocus();
                 ingresoValor.setText(" ");
+                txtSalida.setText(" ");
             }
         }
 
