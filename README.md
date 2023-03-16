@@ -14,7 +14,7 @@ En el conversor de unidades de datos, puedes seleccionar la unidad de datos que 
 
 ## Tecnologías utilizadas
 
-La aplicación está construida utilizando Java. No se ha utilizado ninguna API externa para realizar las conversiones, sino que se ha implementado un sistema de conversión propio en JavaScript.
+La aplicación está construida utilizando Java. No se ha utilizado ninguna API externa para realizar las conversiones, sino que se ha implementado un sistema de conversión propio en Java.
 
 ## Cómo utilizar la aplicación
 
