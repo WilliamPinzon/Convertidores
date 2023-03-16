@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
-      </Properties>
-    </Component>
-  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -33,31 +26,30 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="BtAtras" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="2" attributes="0">
-                          <Component id="txtSalida" alignment="2" min="-2" pref="227" max="-2" attributes="0"/>
-                          <Component id="txt1" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="eleccionMoneda" alignment="2" min="-2" pref="120" max="-2" attributes="0"/>
+                          <Component id="txt1" alignment="2" min="-2" pref="159" max="-2" attributes="0"/>
+                          <Component id="ingresoValor" alignment="2" min="-2" pref="120" max="-2" attributes="0"/>
                           <Component id="txt2" alignment="2" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="2" attributes="0">
+                          <Component id="txt3" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Component id="BtConvertir" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="BtBorrar" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="2" attributes="0">
-                              <Component id="valores1" min="-2" pref="126" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="dato1" min="-2" pref="120" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="txt3" alignment="2" min="-2" max="-2" attributes="0"/>
-                          <Component id="dato2" alignment="2" min="-2" pref="120" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="BtAtras" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                      <Component id="txtSalida" min="-2" pref="133" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="17" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -69,15 +61,12 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="txt2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="dato1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="valores1" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="ingresoValor" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="txt3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-              <Component id="dato2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="eleccionMoneda" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="BtConvertir" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="BtBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -97,28 +86,33 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Bright" size="12" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Conversor de Unidades de Datos"/>
+        <Property name="text" type="java.lang.String" value="Conversor de Monedas"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="ingresoValor">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ingresoValorActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="txt2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ingresa el Dato y el tipo"/>
+        <Property name="text" type="java.lang.String" value="Agrega el valor en pesos Colombianos"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="txt3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A que unidad lo quieres convertir"/>
+        <Property name="text" type="java.lang.String" value="Elige la moneda"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="dato2">
+    <Component class="javax.swing.JComboBox" name="eleccionMoneda">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="dato2ItemStateChanged"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dato2ActionPerformed"/>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="eleccionMonedaItemStateChanged"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eleccionMonedaActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -149,31 +143,6 @@
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="txtSalida">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Bookman Old Style" size="12" style="1"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="0"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="dato1">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="0"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="dato1ItemStateChanged"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dato1ActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JTextField" name="valores1">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="valores1ActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>

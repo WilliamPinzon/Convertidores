@@ -2,7 +2,6 @@ package com.willi.conversores.unidades;
 
 import com.willi.conversores.monedas.*;
 import com.willi.conversores.eleccion.Visual;
-import com.willi.conversores.monedas.ConversorMonedas;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 

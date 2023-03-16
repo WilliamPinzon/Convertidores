@@ -1,7 +1,6 @@
 package com.willi.conversores.monedas;
 
 import com.willi.conversores.eleccion.Visual;
-import com.willi.conversores.monedas.ConversorMonedas;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
@@ -40,6 +39,7 @@ public class Monedas extends javax.swing.JFrame {
         BtBorrar = new javax.swing.JButton();
         BtAtras = new javax.swing.JButton();
         txtSalida = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,15 +91,14 @@ public class Monedas extends javax.swing.JFrame {
         txtSalida.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
         txtSalida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        jLabel1.setText("<html>La tasa equivale<p> a la moneda de cambio <p>del 09 de marzo del 2023 </html>");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(BtAtras))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -113,8 +112,13 @@ public class Monedas extends javax.swing.JFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(BtConvertir)
                                     .addGap(15, 15, 15)
-                                    .addComponent(BtBorrar))))))
-                .addContainerGap(17, Short.MAX_VALUE))
+                                    .addComponent(BtBorrar)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BtAtras)
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,8 +139,12 @@ public class Monedas extends javax.swing.JFrame {
                     .addComponent(BtBorrar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(BtAtras)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 8, Short.MAX_VALUE)
+                        .addComponent(BtAtras))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -242,6 +250,7 @@ public class Monedas extends javax.swing.JFrame {
     private javax.swing.JButton BtConvertir;
     private javax.swing.JComboBox<String> eleccionMoneda;
     private javax.swing.JTextField ingresoValor;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel txt1;
     private javax.swing.JLabel txt2;
     private javax.swing.JLabel txt3;
